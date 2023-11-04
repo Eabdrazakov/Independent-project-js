@@ -27,3 +27,9 @@ input[type="radio"] {
 .hidden {
     display: none;
 }
+
+#error {
+    font-weight: 880;
+    color: red;
+
+}
