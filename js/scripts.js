@@ -28,7 +28,7 @@ function processFormValues() {
     } else if (gen) {
         document.getElementById("ruby").removeAttribute("class");
     } else {
-        document.getElementById("error").removeAttribute("class", "hidden");
+        document.getElementById("error").removeAttribute("class");
     }
 }
 
