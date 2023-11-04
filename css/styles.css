@@ -4,9 +4,10 @@ body {
 }
 
 #main {
-    margin-left: 550px;
-
+    margin-left: 950px;
+    text-align: left;
 }
+
 
 button {
     background-color: #007bff;
