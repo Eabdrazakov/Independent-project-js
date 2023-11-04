@@ -29,9 +29,7 @@ function processFormValues() {
     }
 }
 
-
-
-window.addEventListener("load", function () {
+addEventListener("load", function () {
 
 
     function formSubmit(event) {
