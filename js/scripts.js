@@ -10,26 +10,25 @@ function hideResults() {
 //User interface Logic
 function processFormValues() {
     hideResults();
-    const web = document.querySelector("input#web").value;
-    const mob = document.querySelector("input#mob").value;
-    const ana = document.querySelector("input#ana").value;
-    const dev = document.querySelector("input#dev").value;
-    const gen = document.querySelector("input#gen").value;
+    const web = document.querySelector("input#web").checked;
+    const mob = document.querySelector("input#mob").checked;
+    const ana = document.querySelector("input#ana").checked;
+    const dev = document.querySelector("input#dev").checked;
+    const gen = document.querySelector("input#gen").checked;
 
-    if (web && mob && ana && dev && gen) {
-        if (web) {
-            document.getElementById("java").removeAttribute("class");
-        } else if (mob) {
-            document.getElementById("ios").removeAttribute("class");
-        } else if (ana) {
-            document.getElementById("python").removeAttribute("class");
-        } else if (dev) {
-            document.getElementById("c#").removeAttribute("class");
-        } else if (gen) {
-            document.getElementById("ruby").removeAttribute("class");
-        }
+    if (web) {
+        document.getElementById("java").removeAttribute("class");
+    } else if (mob) {
+        document.getElementById("ios").removeAttribute("class");
+    } else if (ana) {
+        document.getElementById("python").removeAttribute("class");
+    } else if (dev) {
+        document.getElementById("c#").removeAttribute("class");
+    } else if (gen) {
+        document.getElementById("ruby").removeAttribute("class");
     }
 }
+
 
 
 window.addEventListener("load", function () {
@@ -41,9 +40,7 @@ window.addEventListener("load", function () {
         event.preventDefault();
     }
 
-    let form = document.querySelector("form");
+    let form = document.getElementById("main");
 
-    form.addEventListener("submit", function () {
-        formSubmit(event);
-    });
+    form.addEventListener("submit", formSubmit);
 });
