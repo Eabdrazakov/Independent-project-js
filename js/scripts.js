@@ -1,13 +1,13 @@
 //Business Logic
 function hideResults() {
-    document.getElementById("java").setAttribute("class", hidden);
-    document.getElementById("ios").setAttribute("class", hidden);
-    document.getElementById("python").setAttribute("class", hidden);
-    document.getElementById("c#").setAttribute("class", hidden);
-    document.getElementById("ruby").setAttribute("class", hidden);
+    document.getElementById("java").setAttribute("class", "hidden");
+    document.getElementById("ios").setAttribute("class", "hidden");
+    document.getElementById("python").setAttribute("class", "hidden");
+    document.getElementById("c#").setAttribute("class", "hidden");
+    document.getElementById("ruby").setAttribute("class", "hidden");
 }
 
-
+//User interface Logic
 function processFormValues() {
     hideResults();
     const web = document.querySelector("input#web").value;
@@ -16,7 +16,7 @@ function processFormValues() {
     const dev = document.querySelector("input#dev").value;
     const gen = document.querySelector("input#gen").value;
 
-    if (web || mob || ana || dev || gen) {
+    if (web && mob && ana && dev && gen) {
         if (web) {
             document.getElementById("java").removeAttribute("class");
         } else if (mob) {
@@ -30,3 +30,20 @@ function processFormValues() {
         }
     }
 }
+
+
+window.addEventListener("load", function () {
+
+
+    function formSubmit(event) {
+        hideResults();
+        processFormValues();
+        event.preventDefault();
+    }
+
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", function () {
+        formSubmit(event);
+    });
+});
