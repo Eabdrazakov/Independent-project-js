@@ -24,6 +24,17 @@ function processFormValues() {
     } else if (program === "auto") {
         document.getElementById("ruby").removeAttribute("class");
     }
+
+    const power = document.querySelector("#superpowers").value;
+    const food = document.querySelector("#food").value;
+    const place = document.querySelector("#place").value;
+    const numInput = document.querySelector("#numInput").value;
+
+    if (power === "food" && food === "power" && place === "food" && numInput === "power") {
+        document.getElementById("food").removeAttribute("class");
+    } else {
+    }
+
 }
 
 addEventListener("load", function () {
