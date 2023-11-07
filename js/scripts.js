@@ -1,6 +1,6 @@
 //Business Logic
 function hideResults() {
-    document.getElementById("error").setAttribute("class", "hidden");
+
     document.getElementById("java").setAttribute("class", "hidden");
     document.getElementById("ios").setAttribute("class", "hidden");
     document.getElementById("python").setAttribute("class", "hidden");
@@ -11,24 +11,18 @@ function hideResults() {
 //User interface Logic
 function processFormValues() {
     hideResults();
-    const web = document.querySelector("input#web").checked;
-    const mob = document.querySelector("input#mob").checked;
-    const ana = document.querySelector("input#ana").checked;
-    const dev = document.querySelector("input#dev").checked;
-    const gen = document.querySelector("input#gen").checked;
+    const program = document.querySelector('input[name="pro"]:checked').value;
 
-    if (web) {
+    if (program === "websites") {
         document.getElementById("java").removeAttribute("class");
-    } else if (mob) {
+    } else if (program === "apps") {
         document.getElementById("ios").removeAttribute("class");
-    } else if (ana) {
+    } else if (program === "data") {
         document.getElementById("python").removeAttribute("class");
-    } else if (dev) {
+    } else if (program === "game") {
         document.getElementById("c#").removeAttribute("class");
-    } else if (gen) {
+    } else if (program === "auto") {
         document.getElementById("ruby").removeAttribute("class");
-    } else {
-        document.getElementById("error").removeAttribute("class");
     }
 }
 
