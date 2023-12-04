@@ -34,7 +34,6 @@ function processFormValues() {
         document.getElementById("food").removeAttribute("class");
     } else {
     }
-
 }
 
 addEventListener("load", function () {
